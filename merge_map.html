@@ -1,0 +1,170 @@
+<html>
+  <head>
+    <title>LA_Parking_Exploration</title>
+
+    <script src="https://unpkg.com/deck.gl@^7.0.0/dist.min.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js"></script>
+	<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.min.js'></script>
+	<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.css' type='text/css' />
+
+	<div id='map'></div>
+    <style type="text/css">
+      body {
+        font-family: Helvetica, Arial, sans-serif;
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+      }
+      #control-panel {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 12px;
+        padding: 20px;
+        font-size: 12px;
+        line-height: 1.5;
+        z-index: 1;
+        background: #fff;
+        font-family: Helvetica, Arial, sans-serif;
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+      }
+      label {
+        display: inline-block;
+        width: 140px;
+      }
+      #about-link {
+        position: absolute;
+        right: 0;
+        top: 0;
+        text-align: right;
+        margin: 12px;
+        padding: 20px;
+        font-size: 22px;
+        font-weight: 800;
+        line-height: 1.1;
+        z-index: 1;
+        font-family: Helvetica, Arial, sans-serif;
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+      }
+      a {
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id='about-link'>
+      <a href='contact.html' target='_blank'>Contact Me</a>
+    </div>
+    <div id="control-panel">
+      <div>
+        <label style="font-weight: 600; font-size: 15px">Parking Ticket</label>
+        <input id="grid" type="checkbox" checked></input>
+      </div>
+      <div>
+        <label>Cell Size</label>
+        <input id="cellsize" type="range" min="20" max="200" step="5" value="60"></input>
+        <span id="cellsize-value"></span>
+      </div>
+      <div>
+        <label>Opacity</label>
+        <input id="heatmapopacity" type="range" min=".1" max="1" step=".1" value="0.1"></input>
+        <span id="heatmapopacity-value"></span>
+      </div>
+      <div style="margin-top: 10px">
+        <label style="font-weight: 600; font-size: 15px">Crime</label>
+        <input id="hex" type="checkbox" checked></input>
+      </div>
+      <div>
+        <label>Coverage</label>
+        <input id="coverage" type="range" min="0.2" max="5" step="0.1" value="0.2"></input>
+        <span id="coverage-value"></span>
+      </div>
+      <div>
+        <label>Upper Percentile</label>
+        <input id="upperPercentile" type="range" min="10" max="100" step="1" value="98"></input>
+        <span id="upperPercentile-value"></span>
+      </div>
+      <div>
+        <label>Opacity</label>
+        <input id="opacity" type="range" min=".1" max="1" step=".1" value="0.3"></input>
+        <span id="opacity-value"></span>
+      </div>
+    </div>
+  </body>
+
+  <script type="text/javascript">
+    const {DeckGL, HexagonLayer, ScreenGridLayer} = deck;
+    const deckgl = new DeckGL({
+      mapboxApiAccessToken: 'pk.eyJ1IjoidWJlcmRhdGEiLCJhIjoiY2pudzRtaWloMDAzcTN2bzN1aXdxZHB5bSJ9.2bkj3IiRC8wj3jLThvDGdA',
+      mapStyle: 'mapbox://styles/mapbox/dark-v9',
+      longitude: -118.253255,
+      latitude: 34.046679,     
+      zoom: 10,
+      minZoom: 5,
+      maxZoom: 15,
+      pitch: 50
+    });
+    const datacrime = d3.csv('https://raw.githubusercontent.com/tealeave/parking-ticket-free/master/crime.txt');
+    const dataticket = d3.csv('https://raw.githubusercontent.com/tealeave/parking-ticket-free/master/test_1.txt');
+    const layer_control = ['grid', 'hex'];
+    const OPTIONS = ['coverage', 'upperPercentile', 'opacity', 
+    				 'cellsize','heatmapopacity'];
+    const COLOR_RANGE = [
+      [1, 152, 189],
+      [73, 227, 206],
+      [216, 254, 181],
+      [254, 237, 177],
+      [254, 173, 84],
+      [209, 55, 78]
+    ];
+    OPTIONS.forEach(key => {
+      document.getElementById(key).oninput = renderLayer;
+    });
+    layer_control.forEach(key => {
+      document.getElementById(key).oninput = renderLayer;
+    });
+    renderLayer();
+    function renderLayer () {
+      const options = {};
+      OPTIONS.forEach(key => {
+        const value = document.getElementById(key).value;
+        document.getElementById(key + '-value').innerHTML = value;
+        options[key] = Number(value);
+      });
+      // constant radius value
+      options['radius'] = 40;
+      const hexagonLayer = new HexagonLayer({
+        id: 'heatmap',
+        colorRange: COLOR_RANGE,
+        data: datacrime,
+        elevationRange: [0, 200],
+        elevationScale: 250,
+        extruded: true,
+        getPosition: d => [Number(d.lng), Number(d.lat)],
+        ...options
+      });
+      const gridLayer = new ScreenGridLayer({
+	id: 'grid',
+	data: dataticket,
+	colorRange: COLOR_RANGE,
+	getPosition: d => [Number(d.long), Number(d.lat)],
+	cellSizePixels: options['cellsize'],
+	opacity: options['heatmapopacity']
+      });
+ 
+      var layers = [];
+      layer_control.forEach(key => {
+         const v = document.getElementById(key).checked;
+         if (v == true & key == 'hex') {
+	   layers.push(hexagonLayer)
+         } else if (v == true & key == 'grid') {
+           layers.push(gridLayer)
+         }
+      });
+      deckgl.setProps({layers});
+    }
+  </script>
+</html>
