@@ -113,7 +113,7 @@
       });
     }
 
-    d3.csv('https://raw.githubusercontent.com/tealeave/parking-ticket-free/master/crime.txt')
+    d3.csv('https://raw.githubusercontent.com/tealeave/parking-ticket-free/master/MapIoData/crime.txt')
       .then(response => {
       data = response.map(d => [Number(d.lng), Number(d.lat)]);
       renderLayer();

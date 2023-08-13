@@ -65,7 +65,7 @@
       </div>
       <div>
         <label>Cell Size</label>
-        <input id="cellsize" type="range" min="20" max="200" step="5" value="60"></input>
+        <input id="cellsize" type="range" min="20" max="200" step="5" value="20"></input>
         <span id="cellsize-value"></span>
       </div>
       <div>
@@ -107,8 +107,8 @@
       maxZoom: 15,
       pitch: 50
     });
-    const datacrime = d3.csv('https://raw.githubusercontent.com/tealeave/parking-ticket-free/master/crime.txt');
-    const dataticket = d3.csv('https://raw.githubusercontent.com/tealeave/parking-ticket-free/master/test_1.txt');
+    const datacrime = d3.csv('https://raw.githubusercontent.com/tealeave/parking-ticket-free/master/MapIoData/crime.txt');
+    const dataticket = d3.csv('https://raw.githubusercontent.com/tealeave/parking-ticket-free/master/MapIoData/test_1.txt');
     const layer_control = ['grid', 'hex'];
     const OPTIONS = ['coverage', 'upperPercentile', 'opacity', 
     				 'cellsize','heatmapopacity'];
