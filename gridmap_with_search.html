@@ -33,7 +33,7 @@ const myDeckLayer = new MapboxLayer({
   data: 'https://raw.githubusercontent.com/tealeave/parking-ticket-free/master/MapIoData/test_1.json',
   minColor: [0, 255, 0, 4],
           getPosition: d => d,
-          cellSizePixels: 60
+          cellSizePixels: 40
 });
 
 map.on('load', () => {
