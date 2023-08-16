@@ -19,7 +19,7 @@ This repository showcases my research and expertise in the following areas:
 
 ## About Da-Wei Lin
 
-Da-Wei Lin is a Tumor Biologist who harnesses the power of Data Science to navigate the modern research world. The lab is located in sunny California. If you're interested in collaborating or discussing research interests, you can reach out at [tealeave@gmail.com](mailto:tealeave@gmail.com).
+I'm a Tumor Biologist leveraging Data Science to advance contemporary research. Our laboratory is situated in the sun-kissed state of California. For collaboration or research discussions, please contact me at  [tealeave@gmail.com](mailto:tealeave@gmail.com).
 
 ## Selected Works
 
