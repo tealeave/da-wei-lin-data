@@ -118,7 +118,7 @@
             <div id="scoreBoard">Score: <span id="score">0</span></div>
           </div>
           
-          <p class="text-center mt-3">Press spacebar to jump!</p>
+          <p class="text-center mt-3">Press the up arrow key to jump!</p>
 
           <h3 class="mt-5">What is scRNA-seq?</h3>
           <p>Single-cell RNA sequencing (scRNA-seq) is a powerful technique used to study gene expression at the individual cell level. It allows researchers to understand cellular heterogeneity and identify rare cell populations within complex tissues.</p>
@@ -169,7 +169,8 @@
     }, 10);
 
     document.addEventListener("keydown", function (event) {
-      if (event.code === "Space") {
+      if (event.code === "ArrowUp") {
+        event.preventDefault(); // Prevent default scroll behavior
         jump();
       }
     });
