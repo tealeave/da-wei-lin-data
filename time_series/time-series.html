@@ -124,11 +124,25 @@
         <div class="col-lg-5 ml-auto">
           <div class="">
             <h3 class="mb-4">The AI Time Series Hack with ARIMA and Deep Learning — Here's the Secret Sauce</h3>
-            <p>Summary of the ARIMA-LSTM-CNN Hybrid Model for Hourly Energy Forecasting: 
+            <p>ARIMA-LSTM-CNN Hybrid Model for Hourly Energy Forecasting: 
               This hybrid model combines ARIMA for linear trends and seasonal patterns with a deep learning ensemble (LSTM and CNN) to correct nonlinear residuals, achieving a test RMSE of **374.63 MW** and MAPE of **0.89%**—a **72% improvement** over standalone ARIMA. The workflow processes energy and weather data, engineers temporal features, and uses ARIMA to model baseline demand, leaving residuals for the LSTM-CNN network to capture complex interactions (e.g., weather anomalies, holiday rebounds). Evaluation reveals superior accuracy, with worst errors on post-holiday spikes (e.g., July 4th) and best performance on stable off-peak days. Visualizations and error analysis highlight the model’s ability to align closely with actual load curves, while identified weaknesses (e.g., holiday-adjacent days) guide future refinements like lagged features or temperature-driven submodels. This approach effectively bridges statistical rigor and deep learning flexibility for high-precision energy forecasts.</p>
             <p><a href="#" class="btn btn-outline-black ">To The Top</a></p>
           </div>
         </div>
+      </div>
+
+      <div class="row mb-5">
+        <div class="col-lg-7">
+          <a href="timexer.html" class="d-block"><img src="transformer.webp" alt="Image" class="img-fluid"></a>
+        </div>
+        <div class="col-lg-5 ml-auto">
+          <div class="">
+            <h3 class="mb-4">TimeXer: Powering PJM Load Forecasts with Transformer Attention</h3>
+            <p>In this notebook, we introduce TimeXer, a unified transformer‐style model that marries endogenous load patching with exogenous weather and calendar embeddings to deliver sub‐5 % one‐day‐ahead forecasts on PJM’s hourly demand data. After loading and engineering rich features, we build custom Positional, TimeFeature, and Token embeddings, stack multi‐head self- and cross-attention layers, and train with early stopping. We then automate hyperparameter search using Optuna’s adaptive sampler and MedianPruner—rapidly zeroing in on an optimal learning rate and sequence length—and ultimately achieve robust test RMSE ≈ 1.95 GW and MAPE ≈ 4.28 %. TimeXer’s ability to align peaks and troughs with minimal bias demonstrates the power of attention mechanisms for grid‐scale forecasting.</p>
+            <p><a href="#" class="btn btn-outline-black ">To The Top</a></p>
+          </div>
+        </div>
+      </div>
 
 
     </div>
