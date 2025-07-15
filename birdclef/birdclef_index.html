@@ -80,7 +80,7 @@
     <div class="container">
       <div class="row slider-text align-items-center justify-content-center text-center">
         <div class="col-lg-12 col-sm-12">
-          <h1 class="mb-4" data-aos="fade-up" data-aos-delay="">Predict small molecule-protein interactions using the Big Encoded Library for Chemical Assessment</h1>
+          <h1 class="mb-4" data-aos="fade-up" data-aos-delay="">Identifying Animal Calls at El Silencio Natural Reserve</h1>
           <p class="custom-breadcrumbs" data-aos="fade-up" data-aos-delay="100"><a href="../index.html">Home</a> <span class="mx-3">/</span> Projects Single Page</p>
         </div>
       </div>
@@ -93,12 +93,12 @@
 
       <div class="row mb-5">
         <div class="col-lg-7">
-          <a href="ecfps-and-random-forest.html" class="d-block"><img src="forest.jpg" alt="Image" class="img-fluid"></a>
+          <a href="transforming-audio-to-mel-spec.html" class="d-block"><img src="sound.jpg" alt="Image" class="img-fluid"></a>
         </div>
         <div class="col-lg-5 ml-auto">
           <div class="">
-            <h3 class="mb-4">ECFP RF baseline</h3>
-            <p>This notebook details the creation of a baseline model to predict molecule-protein binding using a Random Forest classifier. The model's features are a combination of Extended-Connectivity Fingerprints (ECFPs), generated with RDKit to represent molecular structures, and one-hot encoded protein names. After training on a balanced sample of 60,000 molecules, the model achieved a high Mean Average Precision (mAP) of 0.96 on a local validation set, a result the author notes is likely due to overfitting. Finally, the trained classifier is used to process the entire test set of over 1.6 million molecules in chunks, generating a ecfps_submission.csv file for the competition.</p>
+            <h3 class="mb-4">Visualizing Sound with Spectrograms</h3>
+            <p>This Data Preprocessing Notebook walks through a complete end-to-end pipeline for converting raw audio recordings into normalized Mel-spectrograms ready for 2D CNN training. It begins by loading metadata and setting sampling/Mel-spectrogram parameters, then constructs full file paths and precomputes a Mel filterbank. For each clip it handles NaNs, applies STFT to compute power spectrograms, maps them through the Mel filterbank, converts to decibels and min-max normalizes to [0, 1]. The workflow is accelerated with Joblib for parallel processing, offers debug vs. full-mode execution, saves/loads the aggregated spectrogram array in NPY format, and finally visualizes sample Mel-spectrograms with their class labels</p>
             <p><a href="" class="btn btn-outline-black ">To The Top</a></p>
           </div>
         </div>
@@ -106,12 +106,12 @@
 
       <div class="row mb-5">
         <div class="col-lg-7">
-          <a href="belka_transformer.html" class="d-block"><img src="belka_transformer.jpg" alt="Image" class="img-fluid"></a>
+          <a href="efficientnet-b0-pytorch-train.html" class="d-block"><img src="frog_call.jpg" alt="Image" class="img-fluid"></a>
         </div>
         <div class="col-lg-5 ml-auto">
           <div class="">
-            <h3 class="mb-4">Tensorflow transformer with 4 attention head</h3>
-            <p>This notebook implements a sophisticated deep learning solution for molecule-protein binding prediction using a custom Transformer architecture named Belka built in TensorFlow and Keras. Unlike the baseline model, this approach learns representations directly from atom-level tokenized SMILES strings, which are processed through custom embedding, positional encoding, and Transformer encoder layers. The framework is highly modular, featuring different operational modes (e.g., 'clf' for classification) and employing custom components like a masked, weighted focal loss function (MultiLabelLoss) and a masked AUC metric for robust training and evaluation. The notebook also details a comprehensive data processing pipeline using dask and tf.data to manage large datasets, perform a validation split based on molecular building blocks, and ultimately generate a submission file with the trained model's predictions.</p>
+            <h3 class="mb-4">Fine-Tuning with EfficientNet-B0 to Identify the Calls</h3>
+            <p>This Training Notebook implements a full training pipeline using an EfficientNet-B0 backbone (via PyTorch and the Timm library) as a baseline for the challenge. It supports both pre-computed and on-the-fly mel-spectrogram feature extraction, offers a debug mode for quick iteration (2-epoch runs) versus full training (10 epochs), and is built around stratified 5-fold cross-validation with ensembling capability. To improve generalization it includes Mixup augmentation, spectrogram augmentations (time/frequency masking, brightness adjustment), and employs an AdamW optimizer with cosine annealing learning-rate scheduling. You can optionally load pre-computed spectrograms by setting LOAD_DATA = True for faster training iterations .</p>
             <p><a href="" class="btn btn-outline-black ">To The Top</a></p>
           </div>
         </div>
