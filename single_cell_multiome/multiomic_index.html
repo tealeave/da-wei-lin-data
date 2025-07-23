@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>From Petri Dish to Data Science: &mdash; </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i|Roboto+Mono&display=swap" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="../css/animate.css">
+  <link rel="stylesheet" href="../css/owl.carousel.min.css">
+  <link rel="stylesheet" href="../css/jquery.fancybox.min.css">
+
+
+  <link rel="stylesheet" href="../fonts/ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="../fonts/fontawesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../fonts/flaticon/font/flaticon.css">
+  <link rel="stylesheet" href="../css/aos.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
+
+  <!-- Theme Style -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../fonts/flaticon/font/flaticon.css">
+  <link rel="stylesheet" href="../css/aos.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
+
+  <!-- Theme Style -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+
+  <header role="banner">
+    <nav class="navbar navbar-expand-lg  bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand " href="../index.html">Data Science -> David</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05"
+          aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <div class="collapse navbar-collapse" id="navbarsExample05">
+          <ul class="navbar-nav pl-md-5 ml-auto">
+            <li class="nav-item">
+              <a class="nav-link " href="../index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../about.html">About</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link " href="../publications.html">Publications</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="../portfolio.html">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="../contact.html">Contact</a>
+            </li>
+          </ul>
+
+
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- END header -->
+
+  <div class="slider-item overlay" data-stellar-background-ratio="0.5"
+    style="background-image: url('../images/hero_2.jpg');">
+    <div class="container">
+      <div class="row slider-text align-items-center justify-content-center text-center">
+        <div class="col-lg-12 col-sm-12">
+          <h1 class="mb-4" data-aos="fade-up" data-aos-delay="">Cross Modeling  <br> with Keras on :<br> Single-Cell Omics</h1>
+          <p class="custom-breadcrumbs" data-aos="fade-up" data-aos-delay="100"><a href="../index.html">Home</a> <span class="mx-3">/</span> Projects Single Page</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container">
+
+
+      <div class="row mb-5">
+        <div class="col-lg-7">
+          <a href="citeseq-with-keras.html" class="d-block"><img src="citeseq.png" alt="Image" class="img-fluid"></a>
+        </div>
+        <div class="col-lg-5 ml-auto">
+          <div class="">
+            <h3 class="mb-4">Predicting Protein Expression from CITE-seq Data</h3>
+            <p>This project utilizes a wide-and-deep Multi-Layer Perceptron (MLP) built in Keras to predict surface protein expression from CITE-seq gene expression data. <br> <br>  The model processes input features derived from TruncatedSVD and a curated set of protein-coding genes through a series of dense layers with SELU activation and dropout. A distinctive feature is its concatenation of outputs from all intermediate layers, creating a rich feature representation that is fed into a final linear output layer, directly optimizing for the Pearson correlation metric via a custom loss function. <br> <br> Future work could explore more advanced architectures like Transformers or attention mechanisms to better capture gene interdependencies, employing autoencoders for more sophisticated feature extraction, and implementing ensemble methods to enhance predictive accuracy and robustness.</p>
+            <p><a href="" class="btn btn-outline-black ">To The Top</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-5">
+        <div class="col-lg-7">
+          <a href="dimension_reduction.html" class="d-block"><img src="dimension_reduction.jpg" alt="Image" class="img-fluid"></a>
+        </div>
+        <div class="col-lg-5 ml-auto">
+          <div class="">
+            <h3 class="mb-4">Sparse Data Generation and Dimension Reduction with Truncated SVD</h3>
+            <p>This notebook demonstrates how to convert 10x Chromium Single Cell Multiome ATAC raw outputs into sparse matrix representations and then apply Truncated Singular Value Decomposition (SVD) to reduce dimensionality for downstream analysis.<br> <br> Multi-Omics Pattern Discovery and Classification/Regression: In the context of multi-omics pattern discovery and supervised modeling, methods like DIABLO from the MixOmics suite and MOFA have become instrumental. <br> DIABLO (Data Integration Analysis for Biomarker discovery using Latent cOmponents) constructs latent components that maximize covariance between different omics blocks, enabling the identification of multi-omics biomarkers for classification or regression tasks. <br><br>  On the other hand, MOFA (Multi-Omics Factor Analysis) employs a Bayesian factor analysis framework to extract both shared and modality-specific factors, providing an unsupervised representation that can be readily used for downstream classification or regression by leveraging the learned factor scores as features.</p>
+            <p><a href="" class="btn btn-outline-black ">To The Top</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-5">
+        <div class="col-lg-7">
+          <a href="atac-multiome-with-keras.html" class="d-block"><img src="atacseq.png" alt="Image" class="img-fluid"></a>
+        </div>
+        <div class="col-lg-5 ml-auto">
+          <div class="">
+            <h3 class="mb-4">Prediction of Multiome Gene Expression from ATAC-seq with High Correlation</h3>
+            <p>This notebook presents a Keras-based wide-and-deep multilayer perceptron (MLP) model for predicting gene expression (RNA levels) from chromatin accessibility (ATAC-seq peaks) in the Multiome dataset from the Kaggle Open Problems - Multimodal Single-Cell Integration competition, utilizing dimension reduction via singular value decomposition (SVD) to handle sparse data—reducing inputs to 40 components and targets to 512—followed by 3-fold group k-fold cross-validation grouped by donor, achieving an out-of-fold Pearson correlation of 0.9560 and mean squared error of 10.2398, indicating strong performance in capturing the relationship between the modalities. <br> <br>  Future directions could include exploring advanced architectures like transformers or graph neural networks to better model genomic interactions, integrating additional single-cell modalities such as CITE-seq for multimodal fusion, fine-tuning hyperparameters with Bayesian optimization, testing on external datasets for generalizability, and incorporating biological priors like gene regulatory networks to enhance interpretability and prediction accuracy.</p>
+            <p><a href="" class="btn btn-outline-black ">To The Top</a></p>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+  </div>
+
+  <div class="bg-primary py-5">
+      <div class="container text-center">
+        <div class="row justify-content-center">
+          <div class="col-lg-7">
+            <h3 class="text-white mb-2 font-weight-normal" >Take a Chance!</h3>
+            <p class="text-white mb-4">“IN THE END… We only regret the chances we didn’t take, the relationships we were 
+              afraid to have,and the decisions we waited too long to make.” ― Lewis Carroll</p>
+  
+            <p class="mb-0" data-aos="fade-up" data-aos-delay="200"><a href="images/Resume_DL.pdf" 
+              class="btn btn-outline-white px-4 py-3">Download Resume</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-md-4 mb-5">
+          <h3 class="mb-4">About Me</h3>
+          <p class="mb-5">Chat with me about your research interests!
+             <br>
+             <br>
+              Hit me up at ddlin@berkeley.edu! </p>
+
+
+        </div>
+        <div class="col-md-3 ml-auto">
+
+          <h3 class="mb-4">Navigation</h3>
+          <ul class="list-unstyled footer-link">
+            <li><a href="about.html">About</a></li>
+            <!-- <li><a href="#">Services</a></li> -->
+            <li><a href="portfolio.html">Projects</a></li>
+            <li><a href="#contact.html">Contact</a></li>
+          </ul>
+
+
+
+        </div>
+        <div class="col-md-3 mb-5">
+          <ul class="list-unstyled footer-link d-flex footer-social">
+            <li><a href="#" class="p-2"><span class="fa fa-twitter"></span></a></li>
+            <li><a href="#" class="p-2"><span class="fa fa-facebook"></span></a></li>
+            <li><a href="#" class="p-2"><span class="fa fa-linkedin"></span></a></li>
+            <li><a href="#" class="p-2"><span class="fa fa-instagram"></span></a></li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-12 text-md-center text-left">
+          <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- END footer -->
+
+  <!-- loader -->
+  <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+      <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+      <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+        stroke="#ffc107" /></svg></div>
+
+  <script src="../js/jquery-3.2.1.min.js"></script>
+  <script src="../js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/owl.carousel.min.js"></script>
+  <script src="../js/jquery.waypoints.min.js"></script>
+  <script src="../js/jquery.fancybox.min.js"></script>
+  <script src="../js/jquery.stellar.min.js"></script>
+  <script src="../js/aos.js"></script>
+  <script src="../js/main.js"></script>
+
+</body>
+
+</html>
