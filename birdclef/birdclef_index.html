@@ -118,6 +118,20 @@
       </div>
 
 
+      <div class="row mb-5">
+        <div class="col-lg-7">
+          <a href="efficientnet-b0-pytorch-train.html" class="d-block"><img src="mlflow.png" alt="Image" class="img-fluid"></a>
+        </div>
+        <div class="col-lg-5 ml-auto">
+          <div class="">
+            <h3 class="mb-4">Tracking experiment with mlflow</h3>
+            <p>This Training Notebook implements a full training pipeline using an EfficientNet-B0 backbone (via PyTorch and the Timm library) as a baseline for the challenge. It supports both pre-computed and on-the-fly mel-spectrogram feature extraction, offers a debug mode for quick iteration (2-epoch runs) versus full training (10 epochs), and is built around stratified 5-fold cross-validation with ensembling capability. To improve generalization it includes Mixup augmentation, spectrogram augmentations (time/frequency masking, brightness adjustment), and employs an AdamW optimizer with cosine annealing learning-rate scheduling. You can optionally load pre-computed spectrograms by setting LOAD_DATA = True for faster training iterations .</p>
+            <p><a href="" class="btn btn-outline-black ">To The Top</a></p>
+          </div>
+        </div>
+      </div>
+
+
     </div>
   </div>
 
