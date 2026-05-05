@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-  <title>RAG Proof-of-Concept &mdash; David Lin</title>
+  <title>Retrieval-Augmented Generation &mdash; David Lin</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -72,7 +72,7 @@
     <div class="container">
       <div class="row slider-text align-items-center justify-content-center text-center">
         <div class="col-lg-12 col-sm-12">
-          <h1 class="mb-4" data-aos="fade-up" data-aos-delay="">RAG Proof-of-Concept: Multi-Metric Evaluation for Production Q&amp;A Systems</h1>
+          <h1 class="mb-4" data-aos="fade-up" data-aos-delay="">Retrieval-Augmented Generation: Multi-Metric Evaluation for Production Q&amp;A Systems</h1>
           <p class="custom-breadcrumbs" data-aos="fade-up" data-aos-delay="100"><a href="../index.html">Home</a> <span class="mx-3">/</span> Projects Single Page</p>
         </div>
       </div>
@@ -89,9 +89,9 @@
         </div>
         <div class="col-lg-5 ml-auto">
           <div class="">
-            <h3 class="mb-4">POC Business Report</h3>
-            <p>Final deliverable for DATASCI 267 (Generative AI). The POC indexes 48 ML/AI documents (arXiv, Wikipedia, technical blogs) with <code>multi-qa-mpnet-base-dot-v1</code> embeddings and a Qdrant vector store, served by Mistral-Small-24B with persona-specific prompts for technical and marketing audiences. The headline finding: LLM-as-judge has a <em>refusal-penalty bias</em> that inflates scores for verbose answers, so production systems must also track BLEU and semantic similarity. Blind tests landed at 80% plausible and 0% hallucinated.</p>
-            <p><a href="poc_report.html" class="btn btn-outline-black ">Read the POC Report</a></p>
+            <h3 class="mb-4">Findings &amp; Recommendations</h3>
+            <p>An end-to-end Retrieval-Augmented Generation system that indexes 48 ML/AI documents (arXiv papers, Wikipedia, technical blogs) using <code>multi-qa-mpnet-base-dot-v1</code> embeddings and a Qdrant vector store, served by Mistral-Small-24B with persona-routed prompting for technical and marketing audiences. The headline finding: LLM-as-judge has a <em>refusal-penalty bias</em> that inflates scores for verbose answers, so production systems must also track BLEU and semantic similarity. Blind testing landed at 80% plausible and 0% hallucinated.</p>
+            <p><a href="poc_report.html" class="btn btn-outline-black ">Read the Report</a></p>
           </div>
         </div>
       </div>
@@ -102,9 +102,9 @@
         </div>
         <div class="col-lg-5 ml-auto">
           <div class="">
-            <h3 class="mb-4">Technical Notebook &amp; 49-Config Sweep</h3>
-            <p>Full implementation walkthrough: chunking strategy, retrieval-pipeline assembly, persona-routed prompting, and a 49-configuration sweep across embedding models, top-k values, and prompt formats. Each config is scored on three complementary metrics &mdash; BLEU, semantic similarity, and LLM-as-judge &mdash; surfacing the divergence patterns that motivate the multi-metric recommendation.</p>
-            <p><a href="Assignment_5.html" class="btn btn-outline-black ">Browse the Notebook</a></p>
+            <h3 class="mb-4">Implementation &amp; Configuration Sweep</h3>
+            <p>Implementation walkthrough covering chunking strategy, retrieval-pipeline assembly, persona-routed prompting, and a 49-configuration sweep across embedding models, top-k values, and prompt formats. Each configuration is scored on three complementary metrics &mdash; BLEU, semantic similarity, and LLM-as-judge &mdash; surfacing the divergence patterns that motivate the multi-metric recommendation.</p>
+            <p><a href="Assignment_5.html" class="btn btn-outline-black ">View Implementation</a></p>
           </div>
         </div>
       </div>
